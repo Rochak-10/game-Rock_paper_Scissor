@@ -1,0 +1,263 @@
+@import url();
+
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    display: block;
+    padding: 10px;
+    min-height: 100vh;
+    
+    font-family: 'Roboto', sans-serif;
+    background: #8CC461;
+    box-sizing: border-box;
+}
+
+/*header*/
+
+.container {
+    margin: 0 auto;
+    position: center;
+    display: block;
+    max-height:158px;
+}
+
+.score-bar {
+    margin: 0 auto;
+    padding: 10px;
+    max-width: 800px;
+    width: 80%;
+    height:100%;
+    padding-top: 1rem;
+    border-radius: 13px;
+    border: 2px solid #fff;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+ 
+}
+
+.game-name {
+    flex-grow: 1 70%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 47px;
+    letter-spacing: 0.1em;
+    text-align: left;
+    color: #fff;
+    align-items: center;
+}
+
+.pc {
+    width: 139px;
+    height: 128px;
+    left: 713px;
+    border-radius: 9px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    background-attachment: fixed;
+
+}
+
+.user {
+    width: 139px;
+    height: 128px;
+    left: 881px;
+    border-radius: 9px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    background-attachment: fixed;
+}
+
+.pc-score {
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    color: #656565;
+}
+
+.pc-score_val {
+    font-family: 'Roboto', sans-serif;
+    font-size: 68px;
+    font-weight: 700;
+    line-height: 80px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #252525;
+
+}
+
+.user-score {
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0.1em;
+    text-align: center;
+
+    color: #656565;
+}
+
+.user-score_val {
+    font-family: 'Roboto', sans-serif;
+    font-size: 68px;
+    font-weight: 700;
+    line-height: 80px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #252525;
+
+}
+
+/*---game body---*/
+.game-body {
+    margin: 3rem auto;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+        "rock scissor"
+        "paper paper";
+    gap: 4rem;
+    place-items: center;
+    height: 20rem;
+    width: 20rem;
+    align-items: center;
+    z-index:100;
+}
+
+.choice-btn[data-choice="rock"] {
+    grid-area: rock;
+    border-radius: 50%;
+    border: 16px solid #0074B6;
+    width: 10rem;
+    height: 10rem;
+    cursor: pointer;
+}
+
+.choice-btn[data-choice="scissor"] {
+    grid-area: scissor;
+    border-radius: 50%;
+    border: 16px solid #BD00FF;
+    width: 10rem;
+    height: 10rem;
+    cursor: pointer;
+}
+
+.choice-btn[data-choice="paper"] {
+    grid-area: paper;
+    border-radius: 50%;
+    border: 16px solid #FFA943;
+    width:10rem;
+    height:10rem;
+    cursor: pointer;
+}
+/*--rules--*/
+
+.rules_box {
+    position:absolute;
+    box-sizing: border-box;
+    bottom: 5rem;
+    right: 7rem;
+    width: 16rem;
+    align-items: right;
+    border-radius: 7px;
+    z-index: 900;
+    border: 13px solid #FFFFFF ;
+    border-width: 1px,1px;
+    background: linear-gradient(0deg, #004429, #004429),
+linear-gradient(0deg, #FFFFFF, #FFFFFF);
+    opacity: 0;
+    transition: transform 0.2s cubic-bezier(0.5, 1.5, 0.5, 0.7);
+}
+.bt-close{ 
+    box-sizing: border-box;
+    position: relative;
+    width: 3.5rem;
+    height: 3.5rem;
+    right:-13rem;
+    bottom:19em;
+    border: 5px;
+}
+.close{
+    position: absolute;
+    font-family: 'Dangrek',sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 60px;
+    letter-spacing: 0em;
+    text-align: center;
+    
+    height: 3.5rem;
+    width: 3.5rem;
+    right: auto;
+    bottom: auto;
+    color: #FFFFFF;
+    border-radius: 50%;
+    background: linear-gradient(0deg, #FF0000, #FF0000),
+linear-gradient(0deg, #FFFFFF, #FFFFFF);
+    border: 5px solid #FFFFFF
+}
+
+.rule_btn {
+    position: absolute;
+    width: 119px;
+    height: 40px;
+    bottom: 1.5rem;
+    right: 6.5rem;
+    border-radius: 10px;
+    border: 2px solid #FFFFFF;
+    
+    font-family: 'Roboto', sans-serif;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 25px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    align-content: right;
+    color: #FFF;
+    background-color: transparent;
+    cursor: pointer;
+}
+.rule_btn::after{
+    border: 1px solid #000;
+}
+.heading {
+    text-align: center;
+    font-family: inherit;
+    font-size: 29px;
+    font-weight: 500;
+    line-height: 34px;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+}
+
+.rules-text {
+    padding-left: 20px;
+    align-items: right;
+    
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 15px;
+    letter-spacing: 0.1em;
+    text-align: left;
+    color: #FFFFFF;
+}
+
